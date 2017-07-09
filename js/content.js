@@ -32,7 +32,12 @@ function appendPageItems(pageNum) {
             requestNext = false;
             msg = 'Oops. There was an error while loading the next page items (page ' + pageNum + ').';
             console.error(msg);
-            $('<div style="text-align:center; color:red">' + msg + '</div>').insertAfter('#catalog_products');
+            $('<div id="oops_error" style="text-align:center; color:red">' + msg + '<BR><a id="try_again_btn">Try again</a></div>').insertAfter('#catalog_products');
+            $('#try_again_btn').click(function() {
+                $('#oops_error').remove();
+                $('.infinite-loading').show();
+                appendPageItems(pageNum);
+            });
             $('div .catalog_browsing').show();
         } else if (html.indexOf('class="no-results"') > -1) {
             console.log('not loaded: ', pageNum);
