@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Threadless Infinite Scroll",
-	"version": "0.1",
+	"version": "0.2",
 	"description": "Replace the default pagination with infinite scroll. Makes it much easier to browse tons of products fast!",
 	"author": "Ariel Jannai",
 	"content_scripts": [{
